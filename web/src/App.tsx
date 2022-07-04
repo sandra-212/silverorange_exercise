@@ -12,5 +12,9 @@ export function App() {
       .catch((err) => console.log(err));
   }, []);
 
-  return <RepoList repos={repos} />;
+  const sortedRepos = repos.sort((a: any, b: any) =>
+    new Date(a.created_at).getTime() < new Date(b.created_at).getTime() ? -1 : 1
+  );
+
+  return <RepoList repos={sortedRepos} />;
 }

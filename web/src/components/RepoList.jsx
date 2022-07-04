@@ -8,6 +8,7 @@ const RepoList = ({ repos }) => {
         Desc: {repo.description}
         Lang: {repo.language}
         Forks: {repo.forks_count}
+        Date: {repo.created_at}
       </ul>
     );
   });
