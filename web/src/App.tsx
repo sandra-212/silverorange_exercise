@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import RepoList from './components/RepoList';
 import './App.css';
 
 export function App() {
@@ -11,6 +11,6 @@ export function App() {
       .then((data) => setRepos(data))
       .catch((err) => console.log(err));
   }, []);
-  console.log(repos);
-  return <ul>{repos.map((repo) => repo.id)}</ul>;
+
+  return <RepoList repos={repos} />;
 }
