@@ -11,6 +11,7 @@ const RepoList = ({ repos }) => {
   const languages = new Set(languageTypes);
   const options = Array.from(languages);
 
+  const handleClick = (lg) => {
     const filtered = repos.filter((repo) => repo.language === lg);
     setFilteredRepos(filtered);
   };
