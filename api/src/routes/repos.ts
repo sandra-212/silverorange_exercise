@@ -20,8 +20,6 @@ repos.get('/', async (_: Request, res: Response) => {
       res.json(allRepos);
     })
     .catch(function (error: any) {
-      /* eslint-disable */
-      console.log(error);
+      res.send(error);
     });
-  // TODO: See README.md Task (A). Return repo data here. You’ve got this!
 });
