@@ -13,13 +13,7 @@ export function App() {
       .catch((err) => setError(true));
   }, []);
 
-  const sortedRepos = repos.sort((a: any, b: any) =>
-    new Date(a.created_at).getTime() < new Date(b.created_at).getTime() ? -1 : 1
-  );
-
   return (
-    <>
-      {error ? <>{'error, please reload'}</> : <RepoList repos={sortedRepos} />}
-    </>
+    <>{error ? <>{'error, please reload'}</> : <RepoList repos={repos} />}</>
   );
 }
