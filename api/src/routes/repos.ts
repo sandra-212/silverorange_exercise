@@ -1,6 +1,6 @@
 import { Router, Request, Response } from 'express';
 import fileRepos from '../../data/repos.json';
-const axios = require('axios');
+import axios from 'axios';
 
 export const repos = Router();
 
@@ -13,14 +13,14 @@ repos.get('/', async (_: Request, res: Response) => {
     .get(' https://api.github.com/users/silverorange/repos')
     .then(function (response: any) {
       // handle success
-      let remoteRepos = response.data;
-      let repos = [...fileRepos, ...remoteRepos].filter(
+      const remoteRepos = response.data;
+      const allRepos = [...fileRepos, ...remoteRepos].filter(
         (repo: any) => repo.fork === false
       );
-      res.json(repos);
+      res.json(allRepos);
     })
     .catch(function (error: any) {
-      // handle error
+      /* eslint-disable */
       console.log(error);
     });
   // TODO: See README.md Task (A). Return repo data here. You’ve got this!

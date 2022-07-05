@@ -10,11 +10,8 @@ const List = ({ repos }) => {
     .map((repo) => {
       return (
         <ul key={repo.id}>
-          Name: {repo.full_name}
-          Desc: {repo.description}
-          Lang: {repo.language}
-          Forks: {repo.forks_count}
-          Date: {repo.created_at}
+          Name: {repo.full_name} Desc: {repo.description} Lang: {repo.language}{' '}
+          Forks: {repo.forks_count} Date: {repo.created_at}
         </ul>
       );
     });
