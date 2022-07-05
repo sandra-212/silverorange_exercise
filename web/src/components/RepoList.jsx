@@ -26,7 +26,7 @@ const RepoList = ({ repos }) => {
   return (
     <>
       <ButtonList options={options} handleClick={handleClick} />
-      <List repos={filteredRepos} />;
+      <List repos={filteredRepos} />
     </>
   );
 };
